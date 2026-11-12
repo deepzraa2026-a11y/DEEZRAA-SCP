@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DEEZRAA SCP — Your Scenes. Your Vision. Your World.</title>
+<meta name="description" content="Discover, collect and share extraordinary anime scene packs." />
+<link rel="icon" type="image/svg+xml" href="/img/deezraa-logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#080808; --ink2:#101010; --ink3:#161616;
+  --crimson:#E50914; --crimson-soft:#ff3b47;
+  --t1:#fff; --t2:#929292; --t3:#656565;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth}
+body,h1,h2,h3,h4,p,ul,ol,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+body{background:var(--ink);color:var(--t1);font-family:Inter,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,select,textarea{font:inherit}
+body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.055;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+::selection{background:rgba(229,9,20,.9);color:#fff}
+:focus-visible{outline:2px solid rgba(229,9,20,.75);outline-offset:3px;border-radius:6px}
+::-webkit-scrollbar{width:10px;height:8px}
+::-webkit-scrollbar-track{background:#0a0a0a}
+::-webkit-scrollbar-thumb{background:#262626;border-radius:99px;border:2px solid #0a0a0a}
+.wrap{max-width:1400px;margin:0 auto;padding:0 24px}
+.font-d{font-family:"Space Grotesk",Inter,sans-serif}
+.label-caps{font-size:11px;font-weight:600;letter-spacing:.32em;text-transform:uppercase}
+.grad-red{background:linear-gradient(115deg,#fff 12%,#ffd9dc 38%,#ff4750 62%,#e50914 88%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.grad-steel{background:linear-gradient(180deg,#fff 30%,#8f8f8f 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* glass */
+.glass{background:linear-gradient(140deg,rgba(255,255,255,.088),rgba(255,255,255,.032) 42%,rgba(255,255,255,.055));-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 14px 44px rgba(0,0,0,.5)}
+.glass-soft{background:linear-gradient(150deg,rgba(255,255,255,.055),rgba(255,255,255,.02));-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border:1px solid rgba(255,255,255,.09);box-shadow:inset 0 1px 0 rgba(255,255,255,.09)}
+.glass-deep{background:linear-gradient(150deg,rgba(16,16,16,.72),rgba(10,10,10,.82));-webkit-backdrop-filter:blur(28px) saturate(160%);backdrop-filter:blur(28px) saturate(160%);border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 24px 70px rgba(0,0,0,.65)}
+.glass-hover{transition:border-color .4s var(--ease),box-shadow .4s var(--ease),transform .4s var(--ease)}
+.glass-hover:hover{border-color:rgba(255,255,255,.22)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;white-space:nowrap;user-select:none;transition:all .35s var(--ease)}
+.btn-primary{background:linear-gradient(180deg,#ff1b26,#e50914 55%,#b00610);color:#fff;border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 24px rgba(229,9,20,.45)}
+.btn-primary:hover{filter:brightness(1.12);transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 10px 34px rgba(229,9,20,.6)}
+.btn-primary:active{transform:scale(.985)}
+.btn-primary:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.btn-glass{background:linear-gradient(140deg,rgba(255,255,255,.1),rgba(255,255,255,.04));-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 8px 28px rgba(0,0,0,.4)}
+.btn-glass:hover{border-color:rgba(255,255,255,.28);transform:translateY(-1px)}
+.gbtn{display:flex;align-items:center;justify-content:center;gap:.7rem;width:100%;height:50px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.gbtn:hover{border-color:rgba(229,9,20,.35)!important;box-shadow:0 0 34px rgba(229,9,20,.22)}
+.divider{display:flex;align-items:center;gap:16px;margin:24px 0;color:var(--t3)}
+.divider::before,.divider::after{content:"";height:1px;flex:1;background:rgba(255,255,255,.08)}
+/* inputs */
+.field-label{display:block;margin-bottom:10px;color:var(--t3)}
+.inp{width:100%;box-sizing:border-box;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.11);border-radius:14px;color:#fff;padding:.85rem 1.05rem;font-size:.925rem;outline:none;transition:border-color .3s,box-shadow .3s,background .3s}
+.inp::placeholder{color:#5c5c5c}
+.inp:focus{border-color:rgba(229,9,20,.55);background:rgba(255,255,255,.06);box-shadow:0 0 0 3px rgba(229,9,20,.16)}
+select.inp{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23929292' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.6rem}
+select.inp option{background:#101010}
+textarea.inp{resize:vertical;min-height:130px;line-height:1.6}
+.errbox{display:flex;align-items:center;gap:8px;border:1px solid rgba(229,9,20,.3);background:rgba(229,9,20,.1);color:#ff8f96;border-radius:12px;padding:.7rem .9rem;font-size:12.5px;margin-top:14px}
+/* nav */
+#topnav{position:fixed;inset:0 0 auto 0;z-index:50}
+.navfade{position:absolute;inset:0 0 auto 0;height:96px;background:linear-gradient(to bottom,rgba(0,0,0,.8),rgba(0,0,0,.35),transparent);pointer-events:none}
+.navwrap{position:relative;display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:12px auto 0;padding:10px 20px;border-radius:18px;transition:all .5s var(--ease)}
+.navwrap.scrolled{background:linear-gradient(150deg,rgba(16,16,16,.72),rgba(10,10,10,.82));-webkit-backdrop-filter:blur(28px) saturate(160%);backdrop-filter:blur(28px) saturate(160%);border:1px solid rgba(255,255,255,.1)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{width:32px;height:32px;border-radius:10px;border:1px solid rgba(255,255,255,.25);box-shadow:0 4px 16px rgba(229,9,20,.5);object-fit:cover}
+.brand b{font-family:"Space Grotesk";font-size:15px;letter-spacing:.18em}
+.brand em{font-style:normal;font-size:9px;font-weight:600;letter-spacing:.32em;color:var(--crimson)}
+.navlinks{display:none;gap:4px}
+@media(min-width:860px){.navlinks{display:flex}}
+.navlinks a{padding:8px 16px;border-radius:999px;font-size:12.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);transition:color .3s}
+.navlinks a:hover{color:#fff}
+.navlinks a.on{color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
+.navright{display:flex;align-items:center;gap:10px}
+.avatarbtn{display:flex;align-items:center;gap:7px;border-radius:999px;padding:4px 10px 4px 4px}
+.avatarbtn img,.avatarbtn .ph{width:30px;height:30px;border-radius:50%;object-fit:cover;background:#1c1c1c;display:grid;place-items:center;font-size:11px;font-weight:700}
+#userDrop{position:absolute;right:16px;top:calc(100% + 10px);width:240px;border-radius:18px;padding:6px;display:none;z-index:60}
+#userDrop.open{display:block}
+#userDrop a,#userDrop button{display:flex;width:100%;box-sizing:border-box;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;font-size:13px;color:var(--t2);text-align:left}
+#userDrop a:hover,#userDrop button:hover{background:rgba(255,255,255,.06);color:#fff}
+#hamb{display:grid;place-items:center;width:36px;height:36px;border-radius:50%}
+@media(min-width:860px){#hamb{display:none}}
+#mobileMenu{position:fixed;inset:0;z-index:70;display:none;background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px)}
+#mobileMenu.open{display:block}
+#mobileMenu .inner{display:flex;flex-direction:column;height:100%;padding:24px 28px 40px}
+#mobileMenu a.mlink{display:flex;align-items:center;gap:14px;border-radius:16px;padding:15px 18px;font-family:"Space Grotesk";font-size:20px;font-weight:600;margin-top:8px}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:kb 32s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.18) translate(1.6%,-2%)}}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(to top,#080808,#08080859 45%,rgba(0,0,0,.55))}
+.hero-side{position:absolute;inset:0;background:linear-gradient(to right,rgba(8,8,8,.85),transparent 60%)}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none}
+.hero-inner{position:relative;z-index:2;width:100%;padding-bottom:110px}
+.hero h1{font-family:"Space Grotesk";font-weight:700;line-height:.94;letter-spacing:-.035em;font-size:clamp(2.9rem,9.5vw,8rem)}
+.hero .sub{margin-top:26px;max-width:28rem;color:var(--t2);font-size:15px;line-height:1.6}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero-cta .btn{height:48px;padding:0 28px;font-size:11px}
+.hero-stats{display:flex;gap:30px;margin-top:38px;color:var(--t2)}
+.hero-stats b{font-family:"Space Grotesk";font-size:22px;color:#fff;font-variant-numeric:tabular-nums}
+.hero-brand{display:flex;align-items:center;gap:16px;margin-bottom:28px;animation:fadeUp 1s var(--ease) both}
+.hero-brand img{width:64px;height:64px;border-radius:18px;border:1px solid rgba(255,255,255,.25);object-fit:cover;box-shadow:0 0 44px rgba(244,114,182,.35),0 8px 28px rgba(0,0,0,.5)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.45)}
+/* sections & cards */
+.sec{padding-top:88px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px}
+.sec-head h2{font-family:"Space Grotesk";font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:700;letter-spacing:-.02em;margin-top:12px}
+.sec-head .more{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--t2)}
+.sec-head .more:hover{color:#fff}
+.grid-packs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(min-width:640px){.grid-packs{grid-template-columns:repeat(3,1fr);gap:20px}}
+@media(min-width:1024px){.grid-packs{grid-template-columns:repeat(4,1fr)}}
+.pcard{display:block;border-radius:20px;overflow:hidden;background:var(--ink2);border:1px solid rgba(255,255,255,.09);transition:transform .5s var(--ease),border-color .5s,box-shadow .5s;animation:fadeUp .8s var(--ease) both}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.2);box-shadow:0 18px 60px -12px rgba(229,9,20,.35)}
+.pcard .poster{position:relative;aspect-ratio:2/3;overflow:hidden}
+.pcard .poster img{width:100%;height:100%;object-fit:cover;transform:scale(1.03);transition:transform 1.1s var(--ease)}
+.pcard:hover .poster img{transform:scale(1.12)}
+.pcard .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.95),rgba(0,0,0,.2) 55%,rgba(0,0,0,.25))}
+.pcard .badge{position:absolute;top:12px;left:12px;display:flex;gap:8px}
+.pcard .badge span{font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:6px 10px;border-radius:8px}
+.pcard .fav{position:absolute;top:12px;right:12px}
+.pcard .info{position:absolute;left:0;right:0;bottom:0;padding:16px}
+.pcard .info h3{font-family:"Space Grotesk";font-size:19px;font-weight:700;line-height:1.15}
+.pcard .meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-size:11px;color:rgba(255,255,255,.6)}
+.favbtn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.35);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);transition:transform .3s}
+.favbtn:hover{transform:scale(1.1)}
+.favbtn svg{width:15px;height:15px;fill:none;stroke:#fff;stroke-width:2.2}
+.favbtn.on{border-color:rgba(229,9,20,.5)}
+.favbtn.on svg{fill:var(--crimson);stroke:var(--crimson);filter:drop-shadow(0 0 8px rgba(229,9,20,.7))}
+.listrow{display:flex;align-items:center;gap:16px;border-radius:18px;padding:12px;animation:fadeUp .6s var(--ease) both}
+.listrow img.th{width:64px;aspect-ratio:2/3;object-fit:cover;border-radius:12px}
+.listrow .grow{min-width:0;flex:1}
+.listrow h3{font-family:"Space Grotesk";font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* rails, pills, controls */
+.rail{display:flex;gap:10px;overflow-x:auto;padding:4px 4px 8px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.pill{flex-shrink:0;border-radius:999px;padding:10px 18px;font-size:12px;font-weight:500;color:var(--t2);transition:all .3s}
+.pill:hover{color:#fff}
+.pill.on{color:#fff;border:1px solid rgba(229,9,20,.45);background:linear-gradient(to bottom,rgba(229,9,20,.3),rgba(229,9,20,.12));box-shadow:0 0 26px rgba(229,9,20,.25)}
+.searchbar{display:flex;align-items:center;gap:10px;border-radius:999px;padding:0 20px;height:52px}
+.searchbar input{flex:1;background:none;border:0;outline:none;color:#fff;font-size:14.5px;min-width:0}
+.searchbar input::placeholder{color:#5c5c5c}
+.ctl-row{display:flex;flex-direction:column;gap:12px}
+@media(min-width:640px){.ctl-row{flex-direction:row;align-items:center}.searchbar{flex:1}}
+.seg{display:flex;border-radius:999px;padding:4px;gap:2px}
+.seg button{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--t3)}
+.seg button.on{color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14)}
+.rel{position:relative}
+.drop{position:absolute;right:0;top:calc(100% + 10px);z-index:30;width:210px;border-radius:16px;padding:6px;display:none}
+.drop.open{display:block}
+.drop button{display:flex;width:100%;box-sizing:border-box;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:12px;font-size:13px;color:var(--t2)}
+.drop button:hover{background:rgba(255,255,255,.06);color:#fff}
+/* showcase / bands */
+.showcase{display:grid;overflow:hidden;border-radius:28px}
+@media(min-width:960px){.showcase{grid-template-columns:46% 54%}}
+.showcase .ph{position:relative;min-height:340px}
+.showcase .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.showcase .body{padding:28px;display:flex;flex-direction:column;justify-content:center}
+@media(min-width:640px){.showcase .body{padding:48px}}
+.tag{display:inline-block;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:var(--t2);border-radius:999px;padding:6px 14px;font-size:11.5px}
+.band{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.08);background:rgba(16,16,16,.6);border-radius:24px;text-align:center}
+.band>div{padding:40px 16px}
+.band>div+div{border-left:1px solid rgba(255,255,255,.06)}
+.band b{font-family:"Space Grotesk";font-size:clamp(1.8rem,4.5vw,3.2rem);font-variant-numeric:tabular-nums}
+.scroller{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.scroller::-webkit-scrollbar{display:none}
+.scroller .pcard{width:212px;flex-shrink:0;scroll-snap-align:start}
+@media(min-width:640px){.scroller .pcard{width:252px}}
+/* auth */
+.authpage{position:relative;min-height:100svh;display:grid;place-items:center;padding:110px 20px 60px}
+.authbg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.authbg img{width:100%;height:100%;object-fit:cover;opacity:.3}
+.authbg .sh{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,8,8,.7),rgba(8,8,8,.85),#080808)}
+.authcard{position:relative;z-index:2;width:100%;max-width:28rem;border-radius:26px;padding:28px}
+@media(min-width:640px){.authcard{padding:36px}}
+.authlogo{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:28px}
+.authlogo img{width:80px;height:80px;border-radius:22px;border:1px solid rgba(255,255,255,.25);object-fit:cover;box-shadow:0 0 50px rgba(244,114,182,.35),0 10px 34px rgba(0,0,0,.55)}
+.authlogo b{margin-top:16px;font-family:"Space Grotesk";font-size:18px;letter-spacing:.18em}
+.authlogo em{font-style:normal;font-size:9px;font-weight:600;letter-spacing:.32em;color:var(--crimson)}
+/* detail */
+.backdrop{position:absolute;inset:0 0 auto 0;height:78vh;overflow:hidden;pointer-events:none}
+.backdrop img{width:100%;height:100%;object-fit:cover;transform:scale(1.35);opacity:.45;filter:blur(46px) saturate(1.3)}
+.backdrop .sh{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,8,8,.6),rgba(8,8,8,.72),#080808)}
+.detail-grid{display:grid;gap:40px}
+@media(min-width:960px){.detail-grid{grid-template-columns:340px 1fr}}
+@media(min-width:1280px){.detail-grid{grid-template-columns:400px 1fr}}
+.poster-frame{border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 0 0 1px rgba(229,9,20,.35),0 0 44px rgba(229,9,20,.22),0 24px 70px rgba(0,0,0,.6);max-width:340px;margin:0 auto;width:100%}
+.poster-frame .asp{position:relative;aspect-ratio:2/3}
+.poster-frame img{width:100%;height:100%;object-fit:cover}
+.statchips{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:36rem;margin-top:30px}
+@media(min-width:640px){.statchips{grid-template-columns:repeat(4,1fr)}}
+.statchip{border-radius:16px;padding:14px 16px}
+.statchip small{display:block;color:var(--t3);margin-bottom:6px}
+.statchip b{font-family:"Space Grotesk";font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+/* wizard */
+.stepsbar{position:sticky;top:76px;z-index:30;display:flex;width:fit-content;max-width:100%;overflow-x:auto;margin:0 auto 40px;border-radius:999px;padding:6px;gap:2px;scrollbar-width:none}
+.stepsbar::-webkit-scrollbar{display:none}
+.step{display:flex;align-items:center;gap:8px;border-radius:999px;padding:10px 14px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);white-space:nowrap}
+.step.on{color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16)}
+.step.done{color:var(--t2)}
+.wizcard{max-width:48rem;margin:0 auto;border-radius:26px;padding:24px}
+@media(min-width:640px){.wizcard{padding:40px}}
+.wiznav{display:flex;justify-content:space-between;margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}
+.dropzone{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;border:1.5px dashed rgba(255,255,255,.18);border-radius:18px;min-height:180px;padding:24px;color:var(--t3);transition:all .3s;box-sizing:border-box}
+.dropzone:hover{border-color:rgba(229,9,20,.45);color:var(--t2)}
+.dropzone.has{padding:0;overflow:hidden;border-style:solid;min-height:0}
+.swgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(min-width:640px){.swgrid{grid-template-columns:repeat(8,1fr)}}
+.sw{display:flex;flex-direction:column;align-items:center;gap:8px}
+.sw i{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;transition:transform .3s}
+.sw.on i{transform:scale(1.12)}
+.sw small{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--t3)}
+.sw.on small{color:#fff}
+.resrow{display:flex;border-radius:16px;padding:6px;gap:4px}
+.resrow button{flex:1;border-radius:12px;padding:12px;font-size:12.5px;font-weight:600;color:var(--t3)}
+.resrow button.on{color:#fff;background:rgba(229,9,20,.2);border:1px solid rgba(229,9,20,.4)}
+.pbar{height:6px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
+.pbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#E50914,#ff4750);transition:width .6s var(--ease)}
+/* profile */
+.banner{position:relative;height:300px;overflow:hidden}
+@media(min-width:640px){.banner{height:380px}}
+.banner img{width:100%;height:100%;object-fit:cover}
+.banner .sh{position:absolute;inset:0;background:linear-gradient(to top,#080808,rgba(8,8,8,.3) 60%,rgba(8,8,8,.4))}
+.idrow{display:flex;flex-direction:column;gap:24px;margin-top:-72px;position:relative;z-index:2}
+@media(min-width:768px){.idrow{flex-direction:row;align-items:flex-end;justify-content:space-between}.idrow{margin-top:-84px}}
+.idleft{display:flex;align-items:flex-end;gap:20px}
+.bigav{width:128px;height:128px;border-radius:50%;padding:6px;flex-shrink:0}
+@media(min-width:640px){.bigav{width:148px;height:148px}}
+.bigav span{display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;background:#1c1c1c}
+.bigav img{width:100%;height:100%;object-fit:cover}
+.pstats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:42rem;margin-top:32px}
+.pstat{border-radius:16px;padding:16px 20px}
+.pstat b{font-family:"Space Grotesk";font-size:clamp(1.4rem,3vw,2rem);display:block;margin-top:8px;font-variant-numeric:tabular-nums}
+.tabs{display:flex;width:fit-content;border-radius:999px;padding:6px;gap:2px}
+.tabs button{border-radius:999px;padding:10px 20px;font-size:12px;font-weight:600;color:var(--t3)}
+.tabs button.on{color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14)}
+/* about */
+.aboutcard{position:relative;overflow:hidden;border-radius:28px;padding:48px 28px}
+@media(min-width:640px){.aboutcard{padding:56px 48px}}
+.aboutflex{position:relative;display:flex;flex-direction:column;align-items:center;gap:32px;text-align:center}
+@media(min-width:1024px){.aboutflex{flex-direction:row;text-align:left;gap:48px}}
+.aboutpic{position:relative;flex-shrink:0}
+.aboutpic img{width:144px;height:176px;object-fit:cover;border-radius:24px;border:1px solid rgba(255,255,255,.22);box-shadow:0 0 60px rgba(244,114,182,.35),0 20px 60px rgba(0,0,0,.6)}
+@media(min-width:640px){.aboutpic img{width:180px;height:220px}}
+.socbtn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:0 24px;height:48px;font-size:10.5px}
+/* footer */
+footer{margin-top:112px;border-top:1px solid rgba(255,255,255,.06);position:relative}
+.footgrid{display:flex;flex-direction:column;gap:48px;padding:56px 0}
+@media(min-width:1024px){.footgrid{flex-direction:row;justify-content:space-between}}
+.footcols{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+@media(min-width:640px){.footcols{grid-template-columns:repeat(3,1fr);gap:48px}}
+.footcols a{display:block;margin-top:10px;font-size:13.5px;color:var(--t2)}
+.footcols a:hover{color:#fff}
+.footbase{display:flex;flex-direction:column;gap:12px;border-top:1px solid rgba(255,255,255,.06);padding:28px 0;font-size:12px;color:var(--t3)}
+@media(min-width:640px){.footbase{flex-direction:row;justify-content:space-between;align-items:center}}
+/* misc */
+.skel{border-radius:12px;background:linear-gradient(100deg,rgba(255,255,255,.045) 30%,rgba(255,255,255,.11) 50%,rgba(255,255,255,.045) 70%);background-size:200% 100%;animation:sh 1.8s linear infinite}
+@keyframes sh{from{background-position:-200% 0}to{background-position:200% 0}}
+.empty{display:flex;flex-direction:column;align-items:center;text-align:center;border-radius:24px;padding:80px 32px}
+.empty h3{font-family:"Space Grotesk";font-size:20px;margin-top:18px}
+.empty p{color:var(--t2);font-size:14px;margin-top:10px;max-width:24rem;line-height:1.6}
+#toasts{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:120;display:flex;flex-direction:column;gap:10px;align-items:center;width:max-content;max-width:92vw}
+.toast{display:flex;align-items:center;gap:10px;border-radius:999px;padding:12px 22px;font-size:13px;animation:fadeUp .35s var(--ease)}
+#modalRoot{position:fixed;inset:0;z-index:110;display:none;place-items:center;padding:16px;overflow-y:auto}
+#modalRoot.open{display:grid}
+#modalRoot .bk{position:absolute;inset:0;background:rgba(0,0,0,.7);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+#modalRoot .box{position:relative;width:100%;max-width:32rem;border-radius:24px;padding:28px;animation:fadeUp .45s var(--ease)}
+.spin{width:15px;height:15px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:sp 1s linear infinite;display:inline-block}
+@keyframes sp{to{transform:rotate(360deg)}}
+.hide-sm{display:none}
+@media(min-width:640px){.hide-sm{display:inline-flex}}
+</style>
+</head>
+<body>
+<div class="orb" style="position:fixed;top:-10%;left:20%;width:50vw;height:40vh;background:radial-gradient(closest-side,rgba(229,9,20,.1),transparent);z-index:0;pointer-events:none"></div>
+<header id="topnav">
+  <div class="navfade"></div>
+  <div style="padding:0 16px">
+    <div class="navwrap" id="navwrap">
+      <a href="#/" class="brand" aria-label="DEEZRAA SCP home">
+        <img src="/img/deezraa-logo.svg" alt="DEEZRAA official brand logo" />
+        <span><b>DEEZRAA</b> <em>SCP</em></span>
+      </a>
+      <nav class="navlinks" id="desklinks" aria-label="Primary">
+        <a href="#/" data-r="">Home</a>
+        <a href="#/browse" data-r="browse">Browse</a>
+        <a href="#/about" data-r="about">About</a>
+      </nav>
+      <div class="navright">
+        <a href="#/upload" class="btn btn-glass hide-sm" style="height:36px;padding:0 16px;font-size:10.5px">Upload</a>
+        <span id="navAuth"></span>
+        <span class="rel">
+          <button id="hamb" class="glass-soft" aria-label="Open menu">☰</button>
+        </span>
+      </div>
+      <div id="userDrop" class="glass-deep"></div>
+    </div>
+  </div>
+</header>
+<div id="mobileMenu" role="dialog" aria-label="Mobile menu">
+  <div class="inner">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <a href="#/" class="brand" id="mBrand"><img src="/img/deezraa-logo.svg" alt="DEEZRAA logo" /><span><b>DEEZRAA</b> <em>SCP</em></span></a>
+      <button id="mClose" class="glass-soft" style="width:40px;height:40px;border-radius:50%" aria-label="Close menu">✕</button>
+    </div>
+    <nav style="margin-top:40px;display:flex;flex-direction:column" aria-label="Mobile">
+      <a class="mlink glass-soft" href="#/">Home</a>
+      <a class="mlink glass-soft" href="#/browse">Browse</a>
+      <a class="mlink glass-soft" href="#/about">About</a>
+      <a class="mlink glass-soft" href="#/upload">Upload</a>
+      <span id="mAuth"></span>
+    </nav>
+  </div>
+</div>
+<main id="app" style="position:relative;z-index:1;min-height:80vh"></main>
+<footer>
+  <div class="orb" style="top:-160px;left:50%;transform:translateX(-50%);width:60%;height:160px;background:radial-gradient(60% 100% at 50% 100%,rgba(229,9,20,.07),transparent 70%)"></div>
+  <div class="wrap">
+    <div class="footgrid">
+      <div style="max-width:24rem">
+        <a href="#/" class="brand"><img src="/img/deezraa-logo.svg" alt="DEEZRAA official brand logo" style="width:36px;height:36px;border-radius:12px" /><span><b style="font-size:16px">DEEZRAA</b> <em>SCP</em></span></a>
+        <p class="label-caps" style="margin-top:28px;font-size:10px;color:var(--crimson)">About DEEZRAA</p>
+        <p style="margin-top:12px;font-size:13px;line-height:1.7;color:var(--t2)">Anime Editor <span style="color:var(--crimson-soft)">|</span> Video Creator <span style="color:var(--crimson-soft)">|</span> Digital Artist — crafting cinematic anime scene packs for editors around the world.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px">
+          <a href="https://www.instagram.com/deezraa_" target="_blank" rel="noopener noreferrer" class="glass-soft glass-hover" style="display:flex;align-items:center;gap:10px;border-radius:999px;padding:10px 20px 10px 14px;font-size:12.5px" aria-label="DEEZRAA on Instagram (opens in a new tab)"><span style="color:var(--crimson-soft);display:inline-flex"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></span>Instagram</a>
+          <a href="https://www.youtube.com/@Deezrra" target="_blank" rel="noopener noreferrer" class="glass-soft glass-hover" style="display:flex;align-items:center;gap:10px;border-radius:999px;padding:10px 20px 10px 14px;font-size:12.5px" aria-label="DEEZRAA on YouTube (opens in a new tab)"><span style="color:var(--crimson-soft);display:inline-flex"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></span>YouTube</a>
+        </div>
+      </div>
+      <div class="footcols">
+        <div><p class="label-caps" style="font-size:10px;color:var(--t3)">Explore</p><a href="#/browse">All Packs</a><a href="#/browse?cat=Action">Action</a><a href="#/browse?cat=Cyberpunk">Cyberpunk</a><a href="#/browse?cat=Romance">Romance</a></div>
+        <div><p class="label-caps" style="font-size:10px;color:var(--t3)">Create</p><a href="#/upload">Upload a Pack</a><a href="#/register">Become a Creator</a><a href="#/uploads">My Uploads</a></div>
+        <div><p class="label-caps" style="font-size:10px;color:var(--t3)">Platform</p><a href="#/login">Sign In</a><a href="#/register">Register</a><a href="#/about">About</a></div>
+      </div>
+    </div>
+    <div class="footbase"><p>Copyright © 2026 DEEZRAA SCP. All Rights Reserved.</p><p class="label-caps" style="font-size:9px">Your scenes · Your vision · Your world</p></div>
+  </div>
+</footer>
+<div id="toasts" aria-live="polite"></div>
+<div id="modalRoot"><div class="bk" id="modalBk"></div><div class="box glass-deep" id="modalBox"></div></div>
+<script>
+"use strict";
+/* ============ constants ============ */
+const CATS=["All","Action","Romance","Fantasy","Cyberpunk","Drama","Dark Fantasy","Sci-Fi","Slice of Life"];
+const UPLOAD_CATS=CATS.filter(c=>c!=="All");
+const SORTS=[{id:"trending",label:"Trending"},{id:"newest",label:"Newest"},{id:"downloads",label:"Most downloaded"},{id:"oldest",label:"Oldest"}];
+const RESOLUTIONS=["4K","1440p","1080p"];
+const ACCENTS=[{name:"Crimson",from:"#E50914",to:"#5B0E14"},{name:"Ember",from:"#FF6A3D",to:"#8A1E05"},{name:"Violet",from:"#8B5CF6",to:"#2E1065"},{name:"Azure",from:"#3B82F6",to:"#0B1E4B"},{name:"Jade",from:"#10B981",to:"#064E3B"},{name:"Rose",from:"#F472B6",to:"#831843"},{name:"Amber",from:"#F59E0B",to:"#78350F"},{name:"Mono",from:"#9CA3AF",to:"#1F2937"}];
+const IG_URL="https://www.instagram.com/deezraa_";
+const YT_URL="https://www.youtube.com/@Deezrra";
+const G_NEXT="/api/auth/google?next="+encodeURIComponent("/index.html#/home");
+const state={user:null,uploadSesion:0};
+/* ============ utils ============ */
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function fmt(n){n=Number(n||0);if(n>=1e6)return (n/1e6).toFixed(1).replace(/\.0$/,"")+"M";if(n>=1e3)return (n/1e3).toFixed(1).replace(/\.0$/,"")+"K";return ""+n}
+function timeAgo(d){const s=Math.floor((Date.now()-new Date(d).getTime())/1000);if(s<60)return"just now";const m=Math.floor(s/60);if(m<60)return m+"m ago";const h=Math.floor(m/60);if(h<24)return h+"h ago";const dd=Math.floor(h/24);if(dd<30)return dd+"d ago";const mo=Math.floor(dd/30);if(mo<12)return mo+"mo ago";return Math.floor(mo/12)+"y ago"}
+function memberSince(d){return new Date(d).toLocaleDateString("en-US",{month:"long",year:"numeric"})}
+function toast(msg){const t=document.createElement("div");t.className="toast glass-deep";t.innerHTML='<span style="color:var(--crimson-soft)">✓</span><span>'+esc(msg)+"</span>";document.getElementById("toasts").appendChild(t);setTimeout(()=>{t.style.opacity="0";t.style.transition="opacity .4s";setTimeout(()=>t.remove(),400)},2600)}
+function openModal(html){const r=document.getElementById("modalRoot");document.getElementById("modalBox").innerHTML=html;r.classList.add("open");document.body.style.overflow="hidden"}
+function closeModal(){document.getElementById("modalRoot").classList.remove("open");document.body.style.overflow=""}
+document.getElementById("modalBk").addEventListener("click",closeModal);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+/* ============ api ============ */
+async function jget(url){const r=await fetch(url,{headers:{"Accept":"application/json"}});let d=null;try{d=await r.json()}catch(e){}if(!r.ok)throw new Error((d&&d.error)||("Request failed ("+r.status+")"));return d}
+async function jsend(url,method,body){const r=await fetch(url,{method,headers:{"Content-Type":"application/json"},body:body?JSON.stringify(body):undefined});let d=null;try{d=await r.json()}catch(e){}if(!r.ok)throw new Error((d&&d.error)||("Request failed ("+r.status+")"));return d||{}}
+async function uploadOne(file,kind){const fd=new FormData();fd.append("file",file);fd.append("kind",kind);const r=await fetch("/api/upload",{method:"POST",body:fd});let d={};try{d=await r.json()}catch(e){}if(!r.ok||!d.url)throw new Error(d.error||"Upload failed");return d}
+async function refreshMe(){try{const d=await jget("/api/auth/me");state.user=d.user||null}catch(e){state.user=null}renderNav();return state.user}
+/* ============ shared components ============ */
+function favSVG(){return '<svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg>'}
+function cardHTML(p,i){return '<a class="pcard" style="animation-delay:'+Math.min((i||0)*.06,.5)+'s" href="#/pack/'+encodeURIComponent(p.slug)+'">'
++'<span class="poster"><img src="'+esc(p.posterUrl)+'" alt="'+esc(p.title)+' poster" loading="lazy"/>'
++'<span class="shade"></span>'
++'<span class="badge"><span class="glass">'+esc(p.resolution)+'</span>'+(p.featured?'<span class="glass" style="color:var(--crimson-soft)">Featured</span>':"")+'</span>'
++'<span class="fav"><span class="favbtn'+(p.isFavorited?" on":"")+'" data-fav="'+p.id+'" role="button" aria-label="Favorite" tabindex="0">'+favSVG()+'</span></span>'
++'<span class="info"><span class="label-caps" style="font-size:9px;color:rgba(255,255,255,.55)">'+esc(p.animeName)+'</span>'
++'<h3 style="margin-top:6px">'+esc(p.title)+'</h3>'
++'<span class="meta"><span>@'+esc(p.creator.username)+'</span><span>⤓ '+fmt(p.downloadsCount)+'</span></span></span>'
++'</span></a>'}
+function rowHTML(p){return '<a class="listrow glass-soft glass-hover" href="#/pack/'+encodeURIComponent(p.slug)+'">'
++'<img class="th" src="'+esc(p.posterUrl)+'" alt="" loading="lazy"/>'
++'<span class="grow"><span class="label-caps" style="font-size:9px;color:rgba(255,255,255,.5)">'+esc(p.animeName)+'</span><h3>'+esc(p.title)+'</h3>'
++'<span style="font-size:11.5px;color:var(--t3)">@'+esc(p.creator.username)+' · '+esc(p.category)+' · '+esc(p.resolution)+'</span></span>'
++'<span style="font-size:12px;color:rgba(255,255,255,.6)">⤓ '+fmt(p.downloadsCount)+'</span>'
++'<span class="favbtn'+(p.isFavorited?" on":"")+'" data-fav="'+p.id+'" role="button" aria-label="Favorite" tabindex="0">'+favSVG()+'</span></a>'}
+function skelGrid(n){let h='<div class="grid-packs">';for(let i=0;i<(n||8);i++)h+='<div style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:var(--ink2)"><div class="skel" style="aspect-ratio:2/3;border-radius:0"></div></div>';return h+"</div>"}
+function emptyHTML(t,s,btn){return '<div class="empty glass-soft"><div style="font-size:28px">🎬</div><h3>'+esc(t)+'</h3><p>'+esc(s)+'</p>'+(btn||"")+'</div>'}
+function errHTML(msg){return '<div class="empty glass-soft"><div style="font-size:28px">⚠️</div><h3>Something went wrong</h3><p>'+esc(msg)+'</p><button class="btn btn-glass" style="height:44px;padding:0 24px;font-size:10.5px;margin-top:22px" onclick="location.reload()">Try again</button></div>'}
+function secHead(label,title,href){return '<div class="sec-head"><div><p class="label-caps" style="font-size:10px;color:var(--crimson);display:flex;align-items:center;gap:10px"><span style="display:inline-block;height:1px;width:28px;background:rgba(229,9,20,.7)"></span>'+esc(label)+'</p><h2>'+title+'</h2></div>'+(href?'<a class="more" href="'+href+'">View all →</a>':"")+'</div>'}
+async function favToggle(packId,el){if(!state.user){location.hash="#/login?next="+encodeURIComponent(location.hash.slice(1)||"/");return}const on=el.classList.contains("on");el.classList.toggle("on",!on);try{if(!on){await jsend("/api/packs/"+packId+"/favorite","POST")}else{await jsend("/api/packs/"+packId+"/favorite","DELETE")}}catch(e){el.classList.toggle("on",on);toast(e.message)}}
+document.addEventListener("click",e=>{const f=e.target.closest("[data-fav]");if(f){e.preventDefault();e.stopPropagation();favToggle(f.getAttribute("data-fav"),f)}});
+document.addEventListener("keydown",e=>{const f=e.target.closest&&e.target.closest("[data-fav]");if(f&&(e.key==="Enter"||e.key===" ")){e.preventDefault();favToggle(f.getAttribute("data-fav"),f)}});
+/* ============ nav / shell ============ */
+function renderNav(){const box=document.getElementById("navAuth");const m=document.getElementById("mAuth");const u=state.user;
+if(u){const ini=esc((u.displayName||u.username).slice(0,2).toUpperCase());
+box.innerHTML='<button class="avatarbtn glass-soft" id="avBtn" aria-haspopup="menu">'+(u.avatarUrl?'<img src="'+esc(u.avatarUrl)+'" alt=""/>':'<span class="ph">'+ini+'</span>')+'<span style="font-size:12px;color:var(--t2)">▾</span></button>';
+const d=document.getElementById("userDrop");d.innerHTML='<div style="padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08)"><p class="font-d" style="font-size:14px;font-weight:600">'+esc(u.displayName||u.username)+'</p><p style="font-size:12px;color:var(--t3)">@'+esc(u.username)+'</p></div>'
++'<div style="padding:4px"><a href="#/profile/'+encodeURIComponent(u.username)+'">My Profile</a><a href="#/uploads">My Uploads</a><a href="#/favorites">Favorites</a><a href="#/upload">Upload Pack</a>'+(u.role==="admin"?'<a href="/admin">Admin Dashboard</a>':"")+'</div>'
++'<div style="border-top:1px solid rgba(255,255,255,.08);padding-top:4px"><button id="logoutBtn">Sign out</button></div>';
+document.getElementById("avBtn").onclick=e=>{e.stopPropagation();d.classList.toggle("open")};
+document.getElementById("logoutBtn").onclick=async()=>{try{await jsend("/api/auth/logout","POST")}catch(e){}state.user=null;renderNav();location.hash="#/";toast("Signed out")};
+m.innerHTML='<a class="mlink glass-soft" href="#/profile/'+encodeURIComponent(u.username)+'">Profile</a><a class="mlink glass-soft" href="#/uploads">My Uploads</a><a class="mlink glass-soft" href="#/favorites">Favorites</a><button class="btn btn-glass" style="width:100%;padding:16px;font-size:11px;margin-top:12px" id="mLogout">Sign Out</button>';
+document.getElementById("mLogout").onclick=document.getElementById("logoutBtn").onclick;
+}else{box.innerHTML='<a href="#/login" class="btn btn-primary" style="height:36px;padding:0 16px;font-size:10.5px">Sign In</a>';
+m.innerHTML='<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px"><a href="#/login" class="btn btn-glass" style="padding:16px;font-size:11px">Sign In</a><a href="#/register" class="btn btn-primary" style="padding:16px;font-size:11px">Join</a></div>'}
+document.querySelectorAll("#desklinks a").forEach(a=>{const r=a.getAttribute("data-r");const cur=(location.hash.replace(/^#\/+/,"").split("?")[0].split("/")[0]||"");a.classList.toggle("on",(r||"")===cur)})}
+document.addEventListener("click",e=>{const d=document.getElementById("userDrop");if(d.classList.contains("open")&&!e.target.closest("#userDrop")&&!e.target.closest("#avBtn"))d.classList.remove("open")});
+document.getElementById("hamb").onclick=()=>{document.getElementById("mobileMenu").classList.add("open");document.body.style.overflow="hidden"};
+function closeMobile(){document.getElementById("mobileMenu").classList.remove("open");document.body.style.overflow=""}
+document.getElementById("mClose").onclick=closeMobile;
+document.getElementById("mBrand").onclick=closeMobile;
+document.querySelectorAll("#mobileMenu .mlink, #mobileMenu .btn").forEach(a=>a.addEventListener("click",closeMobile));
+window.addEventListener("scroll",()=>{document.getElementById("navwrap").classList.toggle("scrolled",window.scrollY>24)},{passive:true});
+/* ============ router ============ */
+function parseHash(){let h=location.hash.replace(/^#/,"")||"/";const qi=h.indexOf("?");let path=h,query={};if(qi>=0){path=h.slice(0,qi);query=Object.fromEntries(new URLSearchParams(h.slice(qi+1)))}const seg=path.replace(/^\/+/,"").split("/").filter(Boolean);return {seg,query}}
+async function router(){closeMobile();const {seg,query}=parseHash();const app=document.getElementById("app");window.scrollTo(0,0);renderNav();document.getElementById("userDrop").classList.remove("open");
+const v=seg[0]||"";
+try{
+if(v==="")await vHome(app);
+else if(v==="browse")await vBrowse(app,query);
+else if(v==="pack"&&seg[1])await vPack(app,decodeURIComponent(seg[1]));
+else if(v==="upload")await vUpload(app);
+else if(v==="uploads")await vMine(app,"uploads");
+else if(v==="favorites")await vMine(app,"favorites");
+else if(v==="profile"&&seg[1])await vProfile(app,decodeURIComponent(seg[1]));
+else if(v==="login")vAuth(app,"login",query);
+else if(v==="register")vAuth(app,"register",query);
+else if(v==="about")await vAbout(app);
+else app.innerHTML='<div class="wrap" style="padding-top:160px;padding-bottom:80px">'+emptyHTML("Cut from the final edit","This scene didn't make it past the cutting room floor.",'<a href="#/" class="btn btn-primary" style="height:44px;padding:0 24px;font-size:10.5px;margin-top:22px">Back to premiere</a>')+'</div>';
+}catch(err){app.innerHTML='<div class="wrap" style="padding-top:160px;padding-bottom:80px">'+errHTML(err.message)+'</div>'}
+renderNav()}
+window.addEventListener("hashchange",router);
+function needLogin(next){toast("Sign in to continue");location.hash="#/login?next="+encodeURIComponent(next)}
+/* ============ home ============ */
+async function vHome(app){app.innerHTML='<section class="hero"><div class="hero-bg"><img src="/img/hero-bg.jpg" alt=""/></div><div class="hero-shade"></div><div class="hero-side"></div>'
++'<div class="orb" style="bottom:-15%;left:-10%;width:55vw;height:60vh;background:radial-gradient(closest-side,rgba(229,9,20,.32),transparent)"></div>'
++'<div class="orb" style="top:8%;right:-12%;width:36vw;height:48vh;background:radial-gradient(closest-side,rgba(229,9,20,.22),transparent)"></div>'
++'<div class="hero-inner wrap"><div class="hero-brand"><img src="/img/deezraa-logo.svg" alt="DEEZRAA official brand logo"/><div><p class="label-caps" style="font-size:9px;color:rgba(255,255,255,.6)">Official brand</p><p class="font-d" style="margin-top:6px;font-size:18px;font-weight:700;letter-spacing:.14em">DEEZRAA <span style="color:var(--crimson)">SCP</span></p></div></div>'
++'<p class="label-caps" style="font-size:10px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:12px;margin-bottom:24px"><span style="width:7px;height:7px;border-radius:50%;background:var(--crimson);box-shadow:0 0 12px rgba(229,9,20,.9)"></span>Scene packs · Curated by creators</p>'
++'<h1><span style="display:block">YOUR SCENES.</span><span style="display:block" class="grad-steel">YOUR VISION.</span><span style="display:block" class="grad-red">YOUR WORLD.</span></h1>'
++'<p class="sub">Discover, collect and share extraordinary anime scene packs.</p>'
++'<div class="hero-cta"><a href="#/browse" class="btn btn-primary">▶ Explore Scenepacks</a><a href="'+(state.user?"#/upload":"#/login?next=%2Fupload")+'" class="btn btn-glass">Share Your Creation</a></div>'
++'<div class="hero-stats" id="heroStats"><div><b>…</b></div></div></div>'
++'<div class="scrollcue"><span class="label-caps" style="font-size:8.5px">Scroll</span><span>↓</span></div></section>'
++'<div class="wrap"><section class="sec" style="padding-top:64px"><div class="rail" id="catRail"></div></section>'
++'<section class="sec">'+secHead("Most wanted","Trending this week","#/browse?sort=downloads")+'<div id="trendBox">'+skelGrid(8)+'</div></section>'
++'<section class="sec" id="showBox"></section>'
++'<section class="sec">'+secHead("Just landed","Fresh drops","#/browse?sort=newest")+'<div class="scroller" id="freshBox"></div></section>'
++'<section class="sec"><div class="band" id="statBand"></div></section>'
++'<section class="sec">'+secHead("About me","The editor behind the cuts","#/about")+'<div id="aboutPrev"></div></section>'
++'<section class="sec" style="padding-bottom:20px"><div class="glass-deep" style="position:relative;overflow:hidden;border-radius:28px;padding:64px 28px;text-align:center">'
++'<div class="orb" style="top:-96px;left:50%;transform:translateX(-50%);width:120%;height:256px;background:radial-gradient(50% 100% at 50% 0%,rgba(229,9,20,.22),transparent 75%)"></div>'
++'<p class="label-caps" style="font-size:10px;color:var(--crimson)">Join the studio</p>'
++'<h3 class="font-d" style="margin:20px auto 0;max-width:36rem;font-size:clamp(1.9rem,4.2vw,3.2rem);line-height:1.05">Share your vision with <span class="grad-red">the world.</span></h3>'
++'<div style="margin-top:36px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center"><a href="'+(state.user?"#/upload":"#/register")+'" class="btn btn-primary" style="height:48px;padding:0 32px;font-size:11px">'+(state.user?"Upload a pack":"Create free account")+'</a><a href="#/browse" class="btn btn-glass" style="height:48px;padding:0 32px;font-size:11px">Browse collection</a></div></div></section></div>';
+try{const [trend,fresh,all]=await Promise.all([jget("/api/feed?sort=downloads"),jget("/api/feed?sort=newest"),jget("/api/feed")]);
+const packs=all.packs;const creators=new Set(packs.map(p=>p.creator.username)).size;const dls=packs.reduce((a,p)=>a+(p.downloadsCount||0),0);
+document.getElementById("heroStats").innerHTML=[{v:packs.length,l:"Scene packs"},{v:creators,l:"Creators"},{v:dls,l:"Downloads"}].map(s=>'<div style="display:flex;align-items:baseline;gap:10px"><b>'+fmt(s.v)+'</b><span class="label-caps" style="font-size:9px">'+s.l+'</span></div>').join("");
+const cats={};packs.forEach(p=>{cats[p.category]=(cats[p.category]||0)+1});
+document.getElementById("catRail").innerHTML=CATS.filter(c=>c==="All"||cats[c]).map(c=>'<a class="pill glass-soft" href="#/browse'+(c==="All"?"":"?cat="+encodeURIComponent(c))+'">'+esc(c)+(c!=="All"?' <span style="background:rgba(255,255,255,.08);border-radius:99px;padding:2px 8px;font-size:10px">'+cats[c]+'</span>':"")+'</a>').join("");
+document.getElementById("trendBox").innerHTML='<div class="grid-packs">'+trend.packs.slice(0,8).map((p,i)=>cardHTML(p,i)).join("")+'</div>';
+document.getElementById("freshBox").innerHTML=fresh.packs.slice(0,8).map((p,i)=>cardHTML(p,i)).join("");
+document.getElementById("statBand").innerHTML=[{v:packs.length,l:"Scene packs"},{v:creators,l:"Creators"},{v:dls,l:"Downloads"}].map(s=>'<div><b>'+fmt(s.v)+'</b><p class="label-caps" style="font-size:9px;color:var(--t3);margin-top:8px">'+s.l+'</p></div>').join("");
+const feat=trend.packs.find(p=>p.featured)||trend.packs[0];
+if(feat){try{const det=await jget("/api/feed/detail?slug="+encodeURIComponent(feat.slug));document.getElementById("showBox").innerHTML=secHead("Editor's cut","Featured collection")+showcaseHTML(det.pack)}catch(e){}}
+document.getElementById("aboutPrev").innerHTML=aboutCardHTML();
+}catch(err){document.getElementById("trendBox").innerHTML=errHTML(err.message)}}
+function showcaseHTML(p){return '<div class="showcase glass-deep"><div class="ph"><img src="'+esc(p.posterUrl)+'" alt="" loading="lazy"/><span class="glass label-caps" style="position:absolute;top:16px;left:16px;font-size:9px;padding:6px 10px;border-radius:8px">'+esc(p.resolution)+'</span></div>'
++'<div class="body"><p class="label-caps" style="font-size:10px;color:var(--crimson)">Featured collection</p><h3 class="font-d" style="margin-top:16px;font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.02">'+esc(p.title)+'</h3>'
++'<p style="margin-top:10px;font-size:13px;letter-spacing:.24em;color:var(--t3)">'+esc(p.animeName).toUpperCase()+'</p>'
++'<p style="margin-top:20px;color:var(--t2);font-size:14.5px;line-height:1.7;max-width:32rem">'+esc((p.description||"").slice(0,220))+'</p>'
++'<div style="margin-top:24px;display:flex;gap:16px;color:var(--t2);font-size:14px"><span>⤓ '+fmt(p.downloadsCount)+'</span><span>♡ '+fmt(p.favoritesCount)+'</span><span>👁 '+fmt(p.viewsCount)+'</span></div>'
++'<div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><a href="#/pack/'+encodeURIComponent(p.slug)+'" class="btn btn-primary" style="height:44px;padding:0 24px;font-size:10.5px">View pack →</a><a href="#/profile/'+encodeURIComponent(p.creator.username)+'" style="font-size:13px;color:var(--t2)">@'+esc(p.creator.username)+'</a></div></div></div>'}
+/* ============ browse ============ */
+let browseT=null;
+async function vBrowse(app,query){const q=query.q||"";const cat=query.cat||"All";const sort=SORTS.some(s=>s.id===query.sort)?query.sort:"trending";const view=query.view==="list"?"list":"grid";
+app.innerHTML='<div class="wrap" style="padding-top:130px;padding-bottom:60px"><p class="label-caps" style="font-size:10px;color:var(--crimson);display:flex;align-items:center;gap:10px"><span style="display:inline-block;height:1px;width:28px;background:rgba(229,9,20,.7)"></span>The collection</p>'
++'<h1 class="font-d" style="margin-top:16px;font-size:clamp(2.4rem,6.5vw,5rem);line-height:.98;letter-spacing:-.03em">Browse the <span class="grad-red">archive.</span></h1>'
++'<p style="margin-top:18px;color:var(--t2);max-width:36rem;font-size:15px;line-height:1.6">A curated vault of cinematic anime scenes — graded, cut and mastered in up to 4K.</p>'
++'<div style="margin-top:40px" class="ctl-row"><div class="searchbar glass"><span style="color:var(--t3)">🔍</span><input id="bq" placeholder="Search titles, anime, moods…" value="'+esc(q)+'" aria-label="Search scene packs"/>'+(q?'<button id="bqClear" aria-label="Clear search">✕</button>':"")+'</div>'
++'<div style="display:flex;gap:12px"><span class="rel"><button class="btn btn-glass" id="sortBtn" style="height:52px;padding:0 20px;font-size:11px">Sort · '+(SORTS.find(s=>s.id===sort)||{}).label+' ▾</button><span class="drop glass-deep" id="sortDrop">'+SORTS.map(s=>'<button data-sort="'+s.id+'">'+s.label+(s.id===sort?" ✓":"")+'</button>').join("")+'</span></span>'
++'<span class="seg glass-soft"><button data-view="grid" class="'+(view==="grid"?"on":"")+'" aria-label="Grid view">▦</button><button data-view="list" class="'+(view==="list"?"on":"")+'" aria-label="List view">☰</button></span></div></div>'
++'<div class="rail" style="margin-top:20px" id="catPills">'+CATS.map(c=>'<button class="pill glass-soft'+(c===cat?" on":"")+'" data-cat="'+esc(c)+'">'+esc(c)+'</button>').join("")+'</div>'
++'<div style="margin-top:28px;border-top:1px solid rgba(255,255,255,.06);padding-top:22px"><p id="resCount" style="font-size:13px;color:var(--t3)"></p></div>'
++'<div id="resBox" style="margin-top:24px">'+skelGrid(8)+'</div></div>';
+const push=(o)=>{const p=new URLSearchParams();const nq=o.q!==undefined?o.q:document.getElementById("bq").value.trim();if(nq)p.set("q",nq);const nc=o.cat!==undefined?o.cat:cat;if(nc&&nc!=="All")p.set("cat",nc);const ns=o.sort!==undefined?o.sort:sort;if(ns&&ns!=="trending")p.set("sort",ns);const nv=o.view!==undefined?o.view:view;if(nv!=="grid")p.set("view",nv);const s=p.toString();location.hash="#/browse"+(s?"?"+s:"")};
+const bq=document.getElementById("bq");bq.addEventListener("input",()=>{clearTimeout(browseT);browseT=setTimeout(()=>push({}),420)});
+const bc=document.getElementById("bqClear");if(bc)bc.onclick=()=>push({q:""});
+document.getElementById("sortBtn").onclick=e=>{e.stopPropagation();document.getElementById("sortDrop").classList.toggle("open")};
+document.addEventListener("click",()=>{const d=document.getElementById("sortDrop");if(d)d.classList.remove("open")});
+document.querySelectorAll("#sortDrop [data-sort]").forEach(b=>b.onclick=()=>push({sort:b.getAttribute("data-sort")}));
+document.querySelectorAll("#catPills [data-cat]").forEach(b=>b.onclick=()=>push({cat:b.getAttribute("data-cat")}));
+document.querySelectorAll(".seg [data-view]").forEach(b=>b.onclick=()=>push({view:b.getAttribute("data-view")}));
+try{const d=await jget("/api/feed?"+new URLSearchParams({q,category:cat,sort}).toString());const box=document.getElementById("resBox");
+document.getElementById("resCount").innerHTML="<b style='color:#fff'>"+d.packs.length+"</b> "+(d.packs.length===1?"pack":"packs")+(q?' matching “'+esc(q)+'”':"")+(cat!=="All"?" in "+esc(cat):"");
+box.innerHTML=d.packs.length?(view==="list"?d.packs.map(rowHTML).join(""):'<div class="grid-packs">'+d.packs.map((p,i)=>cardHTML(p,i)).join("")+"</div>"):emptyHTML("No scenes found","Try a different search term or category — new packs land every week.")}catch(err){document.getElementById("resBox").innerHTML=errHTML(err.message)}}
+/* ============ pack detail ============ */
+async function vPack(app,slug){app.innerHTML='<div style="padding-top:130px"><div class="wrap"><div class="skel" style="height:44px;width:60%;border-radius:14px"></div><div class="skel" style="height:16px;width:40%;border-radius:8px;margin-top:14px"></div><div class="detail-grid" style="margin-top:36px"><div class="skel" style="aspect-ratio:2/3;border-radius:24px"></div><div><div class="skel" style="height:14px;border-radius:8px"></div><div class="skel" style="height:14px;border-radius:8px;margin-top:12px;width:80%"></div></div></div></div></div>';
+const d=await jget("/api/feed/detail?slug="+encodeURIComponent(slug));const p=d.pack;
+document.title=p.title+" — DEEZRAA SCP";
+app.innerHTML='<div style="position:relative"><div class="backdrop"><img src="'+esc(p.posterUrl)+'" alt=""/><div class="sh"></div></div>'
++'<div class="wrap" style="position:relative;padding-top:130px;padding-bottom:30px"><div class="detail-grid"><div><div class="poster-frame"><div class="asp"><img src="'+esc(p.posterUrl)+'" alt="'+esc(p.title)+' poster"/><span class="glass label-caps" style="position:absolute;top:14px;left:14px;font-size:9px;padding:6px 10px;border-radius:8px">'+esc(p.resolution)+'</span></div></div></div>'
++'<div><p class="label-caps" style="font-size:10px;color:var(--crimson);display:flex;align-items:center;gap:10px"><span style="display:inline-block;height:1px;width:28px;background:rgba(229,9,20,.7)"></span>'+esc(p.animeName)+'</p>'
++'<h1 class="font-d" style="margin-top:14px;font-size:clamp(2.1rem,5vw,4rem);line-height:.98;letter-spacing:-.03em">'+esc(p.title)+'</h1>'
++'<a href="#/profile/'+encodeURIComponent(p.creator.username)+'" style="display:inline-flex;align-items:center;gap:12px;margin-top:24px"><span style="width:40px;height:40px;border-radius:50%;overflow:hidden;border:1px solid rgba(255,255,255,.18);background:#1c1c1c;display:grid;place-items:center;font-size:11px;font-weight:700">'+(p.creator.avatarUrl?'<img src="'+esc(p.creator.avatarUrl)+'" alt="" style="width:100%;height:100%;object-fit:cover"/>':esc((p.creator.displayName||p.creator.username).slice(0,2).toUpperCase()))+'</span><span><span style="display:block;font-size:14px;font-weight:500">'+esc(p.creator.displayName||p.creator.username)+'</span><span style="display:block;font-size:12px;color:var(--t3)">@'+esc(p.creator.username)+' · since '+memberSince(p.creatorJoinedAt)+'</span></span></a>'
++'<p style="margin-top:26px;max-width:42rem;font-size:15px;line-height:1.75;color:var(--t2)">'+esc(p.description)+'</p>'
++((p.tags&&p.tags.length)?'<div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:8px">'+p.tags.map(t=>'<span class="tag">'+esc(t)+'</span>').join("")+'</div>':"")
++'<div class="statchips"><div class="statchip glass-soft"><small class="label-caps" style="font-size:8px">Views</small><b>'+fmt(p.viewsCount)+'</b></div><div class="statchip glass-soft"><small class="label-caps" style="font-size:8px">File size</small><b>'+esc(p.fileSize)+'</b></div><div class="statchip glass-soft"><small class="label-caps" style="font-size:8px">Genre</small><b>'+esc(p.category)+'</b></div><div class="statchip glass-soft"><small class="label-caps" style="font-size:8px">Released</small><b>'+new Date(p.createdAt).toLocaleDateString("en-US",{month:"short",year:"numeric"})+'</b></div></div>'
++'<div style="margin-top:34px;display:flex;flex-wrap:wrap;gap:12px;align-items:center"><button class="btn btn-primary" id="dlBtn" style="height:52px;min-width:218px;padding:0 28px;font-size:11px">⤓ Download pack <span style="background:rgba(0,0,0,.25);border-radius:99px;padding:2px 8px;font-size:10px" id="dlCount">'+fmt(p.downloadsCount)+'</span></button>'
++'<span class="glass-soft" style="display:flex;align-items:center;gap:8px;height:52px;border-radius:999px;padding:0 18px"><span class="favbtn'+(p.isFavorited?" on":"")+'" id="bigFav" role="button" tabindex="0" aria-label="Favorite">'+favSVG()+'</span><span style="font-size:14px" id="favCount">'+p.favoritesCount+'</span></span>'
++'<button class="glass-soft glass-hover" id="copyBtn" style="width:52px;height:52px;border-radius:50%" aria-label="Copy link">🔗</button></div></div></div>'
++((p.previewUrls&&p.previewUrls.length)?'<section class="sec">'+secHead("Inside the pack","Preview stills")+'<div style="display:grid;gap:16px;grid-template-columns:1fr">'+p.previewUrls.slice(0,3).map((u,i)=>'<div style="position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,.1)"><img src="'+esc(u)+'" alt="preview '+(i+1)+'" loading="lazy" style="width:100%;height:100%;object-fit:cover"/></div>').join("")+'</div></section>':"")
++(d.related&&d.related.length?'<section class="sec">'+secHead("Keep watching","More like this","#/browse?cat="+encodeURIComponent(p.category))+'<div class="grid-packs">'+d.related.slice(0,4).map((r,i)=>cardHTML(r,i)).join("")+'</div></section>':"")
++'</div></div>';
+let fav=p.isFavorited,favN=p.favoritesCount;
+const bf=document.getElementById("bigFav");bf.onclick=async()=>{if(!state.user){needLogin("#/pack/"+p.slug);return}fav=!fav;bf.classList.toggle("on",fav);document.getElementById("favCount").textContent=favN+(fav?1:0);try{if(fav)await jsend("/api/packs/"+p.id+"/favorite","POST");else await jsend("/api/packs/"+p.id+"/favorite","DELETE")}catch(e){fav=!fav;bf.classList.toggle("on",fav);document.getElementById("favCount").textContent=favN;toast(e.message)}};
+document.getElementById("copyBtn").onclick=async()=>{try{await navigator.clipboard.writeText(location.href);toast("Link copied to clipboard")}catch(e){toast("Could not copy link")}};
+document.getElementById("dlBtn").onclick=async e=>{const b=e.currentTarget;b.disabled=true;try{const r=await jsend("/api/packs/"+p.id+"/download","POST");const cur=document.getElementById("dlCount");if(cur)cur.textContent=fmt(p.downloadsCount+1);if(r.url){window.open(r.url,"_blank","noopener");toast("Download started")}else toast("Demo pack — creator hasn't attached a file yet")}catch(err){toast(err.message)}b.disabled=false};
+}
+/* ============ upload wizard ============ */
+const W={step:0,title:"",anime:"",desc:"",cat:"Action",tags:"",res:"4K",poster:null,posterURL:"",previews:[],accent:0,packFile:null,extURL:"",fsize:""};
+const WSTEPS=["Details","Visuals","Mood & File","Publish"];
+function wSave(){const g=id=>{const e=document.getElementById(id);return e?e.value:""};W.title=g("wTitle");W.anime=g("wAnime");W.desc=g("wDesc");W.cat=g("wCat")||W.cat;W.tags=g("wTags");W.extURL=g("wExt");W.fsize=g("wFsize")}
+function wValid(){if(W.step===0){if(W.title.trim().length<3)return "Give your pack a title (min. 3 characters).";if(!W.anime.trim())return "Anime / series name is required.";if(W.desc.trim().length<20)return "Description needs at least 20 characters ("+W.desc.trim().length+"/20).";return null}if(W.step===1){if(!W.poster)return "Add a poster image to continue.";return null}return null}
+async function vUpload(app){if(!state.user){needLogin("/upload");return}
+W.step=0;app.innerHTML='<div class="wrap" style="padding-top:130px;padding-bottom:80px;position:relative"><div class="orb" style="top:-40px;left:50%;transform:translateX(-50%);width:70%;height:280px;background:radial-gradient(closest-side,rgba(229,9,20,.14),transparent)"></div>'
++'<div style="text-align:center;max-width:48rem;margin:0 auto"><p class="label-caps" style="font-size:10px;color:var(--crimson)">Director\'s booth</p><h1 class="font-d" style="margin-top:14px;font-size:clamp(2.1rem,5vw,3.6rem);line-height:1">Share your <span class="grad-red">creation.</span></h1><p style="margin:16px auto 0;max-width:32rem;color:var(--t2);font-size:14.5px;line-height:1.6">Four steps between your hard drive and the front page. Keep it cinematic.</p></div>'
++'<div style="margin-top:44px"><div class="stepsbar glass" id="wSteps"></div><div id="wBody"></div></div></div>';
+wRender()}
+function wRender(){document.getElementById("wSteps").innerHTML=WSTEPS.map((s,i)=>'<button class="step'+(i===W.step?" on":i<W.step?" done":"")+'" data-goto="'+i+'">'+(i<W.step?"✓ ":"")+s+'</button>'+(i<WSTEPS.length-1?'<span style="width:12px;height:1px;background:rgba(255,255,255,.14);flex-shrink:0"></span>':"")).join("");
+document.querySelectorAll("#wSteps [data-goto]").forEach(b=>b.onclick=()=>{const n=+b.getAttribute("data-goto");if(n<W.step){wSave();W.step=n;wRender()}});
+const B=document.getElementById("wBody");let h='<div class="wizcard glass-deep">';
+if(W.step===0){h+='<p class="label-caps" style="font-size:10px;color:var(--crimson)">Step 01 — Details</p><h2 class="font-d" style="margin-top:10px;font-size:clamp(1.5rem,3vw,2.1rem)">Name your masterpiece</h2><div style="margin-top:28px;display:grid;gap:20px">'
++'<div style="display:grid;gap:20px;grid-template-columns:1fr" class="w2col"><div><label class="field-label label-caps" style="font-size:9px">Pack title</label><input class="inp" id="wTitle" maxlength="140" placeholder="Neon Rain — Final Arc" value="'+esc(W.title)+'"/></div>'
++'<div><label class="field-label label-caps" style="font-size:9px">Anime / series</label><input class="inp" id="wAnime" maxlength="140" placeholder="Your Lie in April" value="'+esc(W.anime)+'"/></div></div>'
++'<div><label class="field-label label-caps" style="font-size:9px">Description — '+W.desc.trim().length+'/20+ characters</label><textarea class="inp" id="wDesc" placeholder="Describe the mood, the arc, how editors should use these scenes…">'+esc(W.desc)+'</textarea></div>'
++'<div style="display:grid;gap:20px;grid-template-columns:1fr" class="w2col"><div><label class="field-label label-caps" style="font-size:9px">Category</label><select class="inp" id="wCat">'+UPLOAD_CATS.map(c=>'<option'+(c===W.cat?" selected":"")+'>'+c+'</option>').join("")+'</select></div>'
++'<div><label class="field-label label-caps" style="font-size:9px">Tags — comma separated</label><input class="inp" id="wTags" placeholder="aesthetic, 4k, rain, sad" value="'+esc(W.tags)+'"/></div></div>'
++'<div><label class="field-label label-caps" style="font-size:9px">Resolution</label><div class="resrow glass-soft">'+RESOLUTIONS.map(r=>'<button type="button" data-res="'+r+'" class="'+(W.res===r?"on":"")+'">'+r+'</button>').join("")+'</div></div></div>'}
+if(W.step===1){h+='<p class="label-caps" style="font-size:10px;color:var(--crimson)">Step 02 — Visuals</p><h2 class="font-d" style="margin-top:10px;font-size:clamp(1.5rem,3vw,2.1rem)">Set the key art</h2><div style="margin-top:28px;display:grid;gap:28px">'
++'<div><label class="field-label label-caps" style="font-size:9px">Poster — image file, required</label><button type="button" class="dropzone'+(W.posterURL?" has":"")+'" id="dzPoster" style="'+(W.posterURL?"aspect-ratio:16/8":"")+'">'
++(W.posterURL?'<img src="'+W.posterURL+'" alt="Poster preview" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/><span class="glass" style="position:absolute;bottom:12px;right:12px;border-radius:99px;padding:8px 14px;font-size:11px">Replace</span>':'<span><span style="font-size:26px">🖼️</span><span style="display:block;margin-top:10px;font-size:13px">Drop your poster here, or click to browse</span><span class="label-caps" style="display:block;margin-top:8px;font-size:8.5px">JPG · PNG · WEBP — max 12MB</span></span>')
++'</button><input type="file" id="wPosterIn" accept="image/*" hidden/></div>'
++'<div><label class="field-label label-caps" style="font-size:9px">Preview stills — optional, '+(3-W.previews.length)+' slots left</label><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px" id="prevGrid">'
++W.previews.map((p,i)=>'<div style="position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.12)"><img src="'+p.url+'" style="width:100%;height:100%;object-fit:cover"/><button type="button" data-rmprev="'+i+'" style="position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.6);font-size:12px" aria-label="Remove preview">✕</button></div>').join("")
++(W.previews.length<3?'<button type="button" id="addPrev" style="aspect-ratio:16/9;border-radius:12px;border:1.5px dashed rgba(255,255,255,.16);color:var(--t3);font-size:20px">＋</button>':"")
++'</div><input type="file" id="wPrevIn" accept="image/*" multiple hidden/></div></div>'}
+if(W.step===2){h+='<p class="label-caps" style="font-size:10px;color:var(--crimson)">Step 03 — Mood & file</p><h2 class="font-d" style="margin-top:10px;font-size:clamp(1.5rem,3vw,2.1rem)">Grade the atmosphere</h2><div style="margin-top:28px;display:grid;gap:32px">'
++'<div><span class="field-label label-caps" style="font-size:9px">Accent mood — tints your card\'s glow</span><div class="swgrid">'+ACCENTS.map((a,i)=>'<button type="button" class="sw'+(W.accent===i?" on":"")+'" data-acc="'+i+'"><i style="background:linear-gradient(140deg,'+a.from+','+a.to+');'+(W.accent===i?'box-shadow:0 0 0 2px #080808,0 0 0 4px '+a.from:'box-shadow:0 0 0 1px rgba(255,255,255,.14)')+'">'+(W.accent===i?"✓":"")+'</i><small>'+a.name+'</small></button>').join("")+'</div></div>'
++'<div style="display:grid;gap:20px;grid-template-columns:1fr" class="w2col"><div><label class="field-label label-caps" style="font-size:9px">Pack file — zip / rar / 7z (optional)</label><button type="button" id="packPick" style="display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;height:54px;border-radius:14px;border:1.5px dashed '+(W.packFile?"rgba(229,9,20,.4)":"rgba(255,255,255,.16)")+';padding:0 16px;text-align:left"><span>📦</span><span id="packName" style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;color:rgba(255,255,255,.85)">'+(W.packFile?esc(W.packFile.name):"Choose file")+'</span>'+(W.packFile?'<span id="packRm" style="color:var(--t3)">✕</span>':"")+'</button><input type="file" id="wPackIn" hidden/></div>'
++'<div><label class="field-label label-caps" style="font-size:9px">Or external download link — Google Drive supported</label><input class="inp" id="wExt" placeholder="https://drive.google.com/…" value="'+esc(W.extURL)+'" '+(W.packFile?"disabled":"")+'/><p id="driveHint" style="display:none;margin-top:8px;font-size:12px;color:var(--crimson-soft)">Google Drive link detected — make sure link sharing is set to “Anyone with the link”.</p></div></div>'
++'<div><label class="field-label label-caps" style="font-size:9px">File size label</label><input class="inp" id="wFsize" style="max-width:20rem" placeholder="e.g. 1.2 GB" value="'+esc(W.fsize)+'"/></div></div>'}
+if(W.step===3){const tags=W.tags.split(",").map(t=>t.trim()).filter(Boolean).slice(0,8);const a=ACCENTS[W.accent];
+h+='<p class="label-caps" style="font-size:10px;color:var(--crimson)">Step 04 — Review</p><h2 class="font-d" style="margin-top:10px;font-size:clamp(1.5rem,3vw,2.1rem)">Final cut, ready to ship</h2>'
++'<div style="margin-top:28px;display:grid;gap:32px;grid-template-columns:1fr" class="wrev"><div style="max-width:190px;margin:0 auto;width:100%;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:var(--ink2)"><div style="position:relative;aspect-ratio:2/3">'
++(W.posterURL?'<img src="'+W.posterURL+'" style="width:100%;height:100%;object-fit:cover"/>':'<div style="display:grid;place-items:center;height:100%;color:var(--t3)">No poster</div>')
++'<div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.95),transparent 60%)"></div><div style="position:absolute;left:0;right:0;bottom:0;padding:12px"><p class="label-caps" style="font-size:8px;color:rgba(255,255,255,.55)">'+esc(W.anime||"Anime")+'</p><p class="font-d" style="font-size:15px;font-weight:700">'+esc(W.title||"Untitled pack")+'</p></div>'
++'<div style="position:absolute;inset:0;box-shadow:inset 0 -60px 70px -35px '+a.from+'66"></div></div></div>'
++'<div>'+[["Title",W.title],["Anime",W.anime],["Category",W.cat],["Resolution",W.res],["Tags",tags.length?tags.join(" · "):"—"],["Accent",a.name],["Delivery",W.packFile?("Attached — "+W.packFile.name):(W.extURL?"External link":"No file (demo)")],["Description",(W.desc.length>160?W.desc.slice(0,160)+"…":W.desc)]].map(r=>'<div style="display:flex;justify-content:space-between;gap:24px;border-bottom:1px solid rgba(255,255,255,.06);padding:12px 0"><span class="label-caps" style="font-size:9px;color:var(--t3);flex-shrink:0">'+r[0]+'</span><span style="font-size:13px;color:rgba(255,255,255,.85);text-align:right;overflow:hidden;text-overflow:ellipsis">'+esc(r[1]||"—")+'</span></div>').join("")+'</div></div>'}
+h+='<div id="wErr"></div><div class="wiznav"><button class="btn btn-glass" id="wBack" style="height:44px;padding:0 20px;font-size:10.5px"'+(W.step===0?" disabled style='height:44px;padding:0 20px;font-size:10.5px;opacity:.4'":"")+'>← Back</button>'
++(W.step<3?'<button class="btn btn-primary" id="wNext" style="height:44px;padding:0 24px;font-size:10.5px">Continue →</button>':'<button class="btn btn-primary" id="wPub" style="height:44px;padding:0 24px;font-size:10.5px">🚀 Publish pack</button>')+'</div></div>';
+B.innerHTML=h;
+const err=m=>{document.getElementById("wErr").innerHTML=m?'<p class="errbox">'+esc(m)+'</p>':""};
+if(W.step===0){document.querySelectorAll("[data-res]").forEach(b=>b.onclick=()=>{W.res=b.getAttribute("data-res");wSave();wRender()})}
+if(W.step===1){const dz=document.getElementById("dzPoster"),fi=document.getElementById("wPosterIn");
+const setP=f=>{if(!f||!f.type.startsWith("image/")){err("Poster must be an image file.");return}if(f.size>12*1024*1024){err("Poster is too large — max 12MB.");return}if(W.posterURL)URL.revokeObjectURL(W.posterURL);W.poster=f;W.posterURL=URL.createObjectURL(f);err(null);wRender()};
+dz.onclick=()=>fi.click();fi.onchange=()=>setP(fi.files[0]);dz.ondragover=e=>e.preventDefault();dz.ondrop=e=>{e.preventDefault();setP(e.dataTransfer.files[0])};
+const pi=document.getElementById("wPrevIn");const ap=document.getElementById("addPrev");if(ap)ap.onclick=()=>pi.click();
+pi.onchange=()=>{for(const f of Array.from(pi.files)){if(W.previews.length>=3)break;if(!f.type.startsWith("image/"))continue;if(f.size>12*1024*1024){err("A preview exceeds 12MB and was skipped.");continue}W.previews.push({file:f,url:URL.createObjectURL(f)})}pi.value="";err(null);wRender()};
+document.querySelectorAll("[data-rmprev]").forEach(b=>b.onclick=()=>{W.previews.splice(+b.getAttribute("data-rmprev"),1);wRender()})}
+if(W.step===2){document.querySelectorAll("[data-acc]").forEach(b=>b.onclick=()=>{W.accent=+b.getAttribute("data-acc");wSave();wRender()});
+const pk=document.getElementById("packPick"),pin=document.getElementById("wPackIn");pk.onclick=e=>{if(e.target.id==="packRm")return;pin.click()};
+pin.onchange=()=>{const f=pin.files[0];if(!f)return;if(f.size>400*1024*1024){err("Pack file is too large — max 400MB. Use an external link instead.");return}W.packFile=f;W.extURL="";err(null);wRender()};
+const rm=document.getElementById("packRm");if(rm)rm.onclick=e=>{e.stopPropagation();W.packFile=null;wRender()};
+const ex=document.getElementById("wExt");const hint=()=>{document.getElementById("driveHint").style.display=/drive\.google\.com|docs\.google\.com/.test(ex.value)?"block":"none"};ex.addEventListener("input",hint);hint()}
+document.getElementById("wBack").onclick=()=>{if(W.step===0)return;wSave();W.step--;wRender()};
+const nx=document.getElementById("wNext");if(nx)nx.onclick=()=>{wSave();const m=wValid();if(m){err(m);return}err(null);W.step++;wRender()};
+const pb=document.getElementById("wPub");if(pb)pb.onclick=()=>{wSave();if(!W.title||!W.poster){err("Title and poster are required.");return}wPublish()}}
+async function wPublish(){const B=document.getElementById("wBody");const a=ACCENTS[W.accent];
+B.innerHTML='<div class="glass-deep" style="max-width:36rem;margin:0 auto;border-radius:26px;padding:64px 32px;text-align:center"><div style="font-size:40px">⏳</div><p class="label-caps" style="margin-top:28px;font-size:10px;color:var(--t2)">Publishing</p><p class="font-d" id="wPhase" style="margin-top:10px;font-size:24px;font-weight:700">Developing poster…</p><div class="pbar" style="margin:32px auto 0;max-width:22rem"><i id="wBar" style="width:6%"></i></div><p id="wPct" style="margin-top:12px;font-size:12px;color:var(--t3)">6%</p><div id="wErr"></div></div>';
+const setP=(pct,label)=>{document.getElementById("wBar").style.width=pct+"%";document.getElementById("wPct").textContent=pct+"%";if(label)document.getElementById("wPhase").textContent=label};
+const fail=m=>{B.innerHTML='<div class="glass-deep" style="max-width:36rem;margin:0 auto;border-radius:26px;padding:56px 32px;text-align:center"><p class="errbox">'+esc(m)+'</p><button class="btn btn-glass" style="height:44px;padding:0 24px;font-size:10.5px;margin-top:24px" onclick="vUpload(document.getElementById(\'app\'))">Back to review</button></div>'};
+try{const poster=await uploadOne(W.poster,"image");setP(38,"Grading preview stills…");
+const prevURLs=[];for(const p of W.previews){prevURLs.push((await uploadOne(p.file,"image")).url)}setP(58,"Shipping master reel…");
+let fileUrl=W.extURL.trim()||null,finalSize=W.fsize.trim();
+if(W.packFile){const up=await uploadOne(W.packFile,"file");fileUrl=up.url;finalSize=up.size;setP(86,"Final cut…")}else setP(72,"Final cut…");
+const res=await jsend("/api/packs","POST",{title:W.title.trim(),animeName:W.anime.trim(),description:W.desc.trim(),category:W.cat,resolution:W.res,posterUrl:poster.url,previewUrls:prevURLs,accentFrom:a.from,accentTo:a.to,fileUrl,fileSize:finalSize||"—",tags:W.tags.split(",").map(t=>t.trim()).filter(Boolean).slice(0,8)});
+setP(100,"Done");const slug=res.slug;
+B.innerHTML='<div class="glass-deep" style="max-width:36rem;margin:0 auto;border-radius:26px;padding:64px 32px;text-align:center"><div style="width:80px;height:80px;margin:0 auto;border-radius:50%;display:grid;place-items:center;font-size:30px;color:#fff;background:linear-gradient(180deg,#ff1b26,#a30610);box-shadow:0 10px 40px rgba(229,9,20,.5)">✓</div>'
++'<p class="label-caps" style="margin-top:28px;font-size:10px;color:var(--crimson-soft)">Live on DEEZRAA</p><h2 class="font-d" style="margin-top:12px;font-size:clamp(1.7rem,4vw,2.4rem)">“'+esc(W.title)+'” is now streaming.</h2>'
++'<div style="margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center"><a href="#/pack/'+encodeURIComponent(slug)+'" class="btn btn-primary" style="height:48px;padding:0 28px;font-size:11px">View your pack →</a><a href="#/upload" class="btn btn-glass" style="height:48px;padding:0 28px;font-size:11px">Upload another</a></div></div>';
+W.poster=null;W.posterURL="";W.previews=[];W.packFile=null;
+}catch(e){fail(e.message)}}
+/* ============ profile / me ============ */
+let profTab="uploads";
+async function vProfile(app,username){app.innerHTML='<div style="padding-top:120px"><div class="wrap"><div class="skel" style="height:300px;border-radius:0"></div></div></div>';
+const d=await jget("/api/feed/profile?username="+encodeURIComponent(username));const pf=d.profile;
+document.title="@"+pf.username+" — DEEZRAA SCP";
+const accent=pf.bannerAccent||"#E50914";
+app.innerHTML='<div class="banner">'+(pf.bannerUrl?'<img src="'+esc(pf.bannerUrl)+'" alt=""/>':'<div style="height:100%;background:radial-gradient(120% 140% at 20% 0%,'+accent+'55,transparent 55%),radial-gradient(100% 120% at 85% 20%,'+accent+'33,transparent 50%),linear-gradient(180deg,#141414,#080808)"></div>')+'<div class="sh"></div></div>'
++'<div class="wrap"><div class="idrow"><div class="idleft"><span class="bigav glass"><span>'+(pf.avatarUrl?'<img src="'+esc(pf.avatarUrl)+'" alt=""/>':esc((pf.displayName||pf.username).slice(0,2).toUpperCase()))+'</span></span>'
++'<div style="padding-bottom:8px"><h1 class="font-d" style="font-size:clamp(1.6rem,4vw,2.6rem);line-height:1">'+esc(pf.displayName||pf.username)+'</h1><p style="margin-top:8px;font-size:13px;color:var(--t2)"><span style="color:var(--crimson-soft)">@'+esc(pf.username)+'</span> · <span style="color:var(--t3)">Joined '+memberSince(pf.createdAt)+'</span></p></div></div>'
++'<div style="display:flex;gap:12px;padding-bottom:4px">'+(d.isOwner?'<button class="btn btn-glass" id="editBtn" style="height:40px;padding:0 20px;font-size:10.5px">✎ Edit profile</button>':"")+'</div></div>'
++(pf.bio?'<p style="margin-top:24px;max-width:42rem;font-size:14.5px;line-height:1.7;color:var(--t2)">'+esc(pf.bio)+'</p>':"")
++'<div class="pstats"><div class="pstat glass-soft"><span class="label-caps" style="font-size:8.5px;color:var(--t3)">Scene packs</span><b>'+fmt(pf.packsCount)+'</b></div><div class="pstat glass-soft"><span class="label-caps" style="font-size:8.5px;color:var(--t3)">Downloads</span><b>'+fmt(pf.totalDownloads)+'</b></div><div class="pstat glass-soft"><span class="label-caps" style="font-size:8.5px;color:var(--t3)">Favorites</span><b>'+fmt(pf.totalFavorites)+'</b></div></div>'
++(pf.username.toLowerCase()==="deezraa"?'<div style="margin-top:48px" id="profAbout"></div>':"")
++'<div style="margin:48px 0 80px"><div class="tabs glass-soft"><button id="tUp" class="'+(profTab==="uploads"||!d.isOwner?"on":"")+'">Scene packs</button>'+(d.isOwner?'<button id="tFv" class="'+(profTab==="favorites"?"on":"")+'">Favorites</button>':"")+'</div><div id="tabBody" style="margin-top:28px"></div></div></div>';
+if(pf.username.toLowerCase()==="deezraa")document.getElementById("profAbout").innerHTML=aboutCardHTML();
+const show=()=>{const favs=profTab==="favorites"&&d.isOwner;document.getElementById("tUp").classList.toggle("on",!favs);const tf=document.getElementById("tFv");if(tf)tf.classList.toggle("on",favs);
+const list=favs?d.favorites:d.packs;document.getElementById("tabBody").innerHTML=list.length?'<div class="grid-packs">'+list.map((p,i)=>cardHTML(p,i)).join("")+"</div>":emptyHTML(favs?"No favorites yet":"No packs yet",favs?"Packs you favorite will live here.":"@"+pf.username+" hasn't published anything yet.")};
+document.getElementById("tUp").onclick=()=>{profTab="uploads";show()};const tf=document.getElementById("tFv");if(tf)tf.onclick=()=>{profTab="favorites";show()};show();
+const eb=document.getElementById("editBtn");if(eb)eb.onclick=()=>editModal(pf)}
+function editModal(pf){let av=pf.avatarUrl,bn=pf.bannerUrl,ac=pf.bannerAccent||"#E50914";
+openModal('<p class="label-caps" style="font-size:9px;color:var(--crimson)">Studio identity</p><h2 class="font-d" style="margin-top:8px;font-size:24px">Edit profile</h2>'
++'<div style="margin-top:24px;display:grid;gap:18px"><div style="display:flex;gap:14px"><button id="eAv" style="width:80px;height:80px;border-radius:50%;overflow:hidden;border:1px solid rgba(255,255,255,.16);background:#1c1c1c;flex-shrink:0">'+(av?'<img id="eAvImg" src="'+esc(av)+'" style="width:100%;height:100%;object-fit:cover"/>':'<span id="eAvImg">📷</span>')+'</button>'
++'<button id="eBn" style="flex:1;height:80px;border-radius:16px;border:1px solid rgba(255,255,255,.16);overflow:hidden;position:relative;background:linear-gradient(120deg,'+ac+'44,#141414)">'+(bn?'<img id="eBnImg" src="'+esc(bn)+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>':'<span id="eBnImg" style="font-size:12px;color:var(--t2)">Change banner</span>')+'</button></div><input type="file" id="eAvIn" accept="image/*" hidden/><input type="file" id="eBnIn" accept="image/*" hidden/>'
++'<div><label class="field-label label-caps" style="font-size:9px">Display name</label><input class="inp" id="eName" maxlength="64" value="'+esc(pf.displayName||"")+'" placeholder="'+esc(pf.username)+'"/></div>'
++'<div><label class="field-label label-caps" style="font-size:9px">Bio</label><textarea class="inp" id="eBio" maxlength="400" style="min-height:96px" placeholder="Tell the community about your editing style…">'+esc(pf.bio||"")+'</textarea></div>'
++'<div><span class="field-label label-caps" style="font-size:9px">Banner ambient color</span><div style="display:flex;flex-wrap:wrap;gap:10px">'+ACCENTS.map(a=>'<button data-eacc="'+a.from+'" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(140deg,'+a.from+','+a.to+');'+(ac===a.from?'box-shadow:0 0 0 2px #080808,0 0 0 3.5px '+a.from:'box-shadow:0 0 0 1px rgba(255,255,255,.14)')+'" aria-label="'+a.name+'"></button>').join("")+'</div></div>'
++'<div id="eErr"></div><div style="display:flex;justify-content:flex-end;gap:12px"><button class="btn btn-glass" id="eCancel" style="height:44px;padding:0 20px;font-size:10.5px">Cancel</button><button class="btn btn-primary" id="eSave" style="height:44px;padding:0 24px;font-size:10.5px">Save changes</button></div></div>');
+document.getElementById("eCancel").onclick=closeModal;
+document.querySelectorAll("[data-eacc]").forEach(b=>b.onclick=()=>{ac=b.getAttribute("data-eacc");bn=null;editModal(Object.assign({},pf,{avatarUrl:av,bannerUrl:bn,bannerAccent:ac,displayName:document.getElementById("eName").value,bio:document.getElementById("eBio").value}))});
+const up=async(file,setter)=>{try{toast("Uploading image…");const r=await uploadOne(file,"image");setter(r.url);toast("Image updated — hit Save")}catch(e){toast(e.message)}};
+document.getElementById("eAv").onclick=()=>document.getElementById("eAvIn").click();
+document.getElementById("eBn").onclick=()=>document.getElementById("eBnIn").click();
+document.getElementById("eAvIn").onchange=e=>{const f=e.target.files[0];if(f)up(f,u=>{av=u;document.getElementById("eAv").innerHTML='<img src="'+esc(u)+'" style="width:100%;height:100%;object-fit:cover"/>'})};
+document.getElementById("eBnIn").onchange=e=>{const f=e.target.files[0];if(f)up(f,u=>{bn=u;document.getElementById("eBn").innerHTML='<img src="'+esc(u)+'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>'})};
+document.getElementById("eSave").onclick=async e=>{const b=e.currentTarget;b.disabled=true;try{await jsend("/api/profile","PATCH",{displayName:document.getElementById("eName").value,bio:document.getElementById("eBio").value,bannerAccent:ac,avatarUrl:av,bannerUrl:bn});closeModal();toast("Profile saved");await refreshMe();router()}catch(err){document.getElementById("eErr").innerHTML='<p class="errbox">'+esc(err.message)+'</p>';b.disabled=false}}}
+async function vMine(app,which){const me=await refreshMe();if(!me){needLogin("/"+which);return}
+const isUp=which==="uploads";app.innerHTML='<div class="wrap" style="padding-top:130px;padding-bottom:80px"><p class="label-caps" style="font-size:10px;color:var(--crimson)">'+(isUp?"Your studio":"Your collection")+'</p>'
++'<h1 class="font-d" style="margin-top:14px;font-size:clamp(2rem,5vw,3.4rem)">'+(isUp?'My <span class="grad-red">uploads.</span>':'My <span class="grad-red">favorites.</span>')+'</h1><div id="meBox" style="margin-top:36px">'+skelGrid(4)+'</div></div>';
+try{const d=await jget("/api/feed?"+(isUp?"mine=1":"favorites=1"));const box=document.getElementById("meBox");
+box.innerHTML=d.packs.length?'<div class="grid-packs">'+d.packs.map((p,i)=>cardHTML(p,i)).join("")+"</div>":emptyHTML(isUp?"No uploads yet":"No favorites yet",isUp?"Publish your first scene pack and it will appear here.":"Tap the heart on any pack to save it here.",'<a href="'+(isUp?"#/upload":"#/browse")+'" class="btn btn-primary" style="height:44px;padding:0 24px;font-size:10.5px;margin-top:22px">'+(isUp?"Upload a pack":"Browse packs")+'</a>')}catch(err){document.getElementById("meBox").innerHTML=errHTML(err.message)}}
+/* ============ about ============ */
+function aboutCardHTML(){return '<div class="aboutcard glass-deep"><div class="orb" style="top:-112px;left:50%;transform:translateX(-50%);width:110%;height:288px;background:radial-gradient(50% 100% at 50% 0%,rgba(229,9,20,.22),transparent 75%)"></div>'
++'<div class="aboutflex"><div class="aboutpic"><img src="/img/deezraa-logo.svg" alt="DEEZRAA official brand artwork" loading="lazy"/></div>'
++'<div style="flex:1;min-width:0"><p class="label-caps" style="font-size:10px;color:var(--crimson)">About me</p><h3 class="font-d" style="margin-top:12px;font-size:clamp(1.9rem,4vw,3rem);line-height:1">DEEZRAA</h3>'
++'<p style="margin-top:12px;font-size:12px;font-weight:600;letter-spacing:.24em;color:var(--t2)">Anime Editor <span style="color:var(--crimson);margin:0 6px">|</span> Video Creator <span style="color:var(--crimson);margin:0 6px">|</span> Digital Artist</p>'
++'<p style="margin:20px auto 0;max-width:36rem;font-size:14.5px;line-height:1.7;color:var(--t2)">I craft cinematic anime scene packs — slicing iconic moments into collector-grade cuts for editors around the world. Every pack is hand-picked, graded and mastered. Follow the journey and catch new drops first.</p>'
++'<div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center" class="aboutbtns"><a href="'+IG_URL+'" target="_blank" rel="noopener noreferrer" class="btn btn-glass socbtn"><span style="color:var(--crimson-soft)">📸</span>Instagram</a><a href="'+YT_URL+'" target="_blank" rel="noopener noreferrer" class="btn btn-glass socbtn"><span style="color:var(--crimson-soft)">▶</span>YouTube</a></div></div></div></div>'
++'<style>.aboutbtns{justify-content:center}@media(min-width:1024px){.aboutbtns{justify-content:flex-start!important}}</style>'}
+async function vAbout(app){app.innerHTML='<div class="wrap" style="padding-top:130px;padding-bottom:40px">'+secHead("About me","The editor behind the cuts")+aboutCardHTML()+'<section class="sec">'+secHead("Fresh from the studio","Latest by DEEZRAA","#/profile/deezraa")+'<div id="aboutPacks">'+skelGrid(4)+'</div></section></div>';
+try{const d=await jget("/api/feed?creator=deezraa");document.getElementById("aboutPacks").innerHTML='<div class="grid-packs">'+d.packs.slice(0,4).map((p,i)=>cardHTML(p,i)).join("")+"</div>"}catch(e){document.getElementById("aboutPacks").innerHTML=""}}
+/* ============ auth views ============ */
+function gSVG(){return '<svg width="17" height="17" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.66-.22-2.45H12v4.64h6.45a5.52 5.52 0 0 1-2.39 3.62v3h3.87c2.26-2.09 3.57-5.16 3.57-8.81z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.87-3c-1.07.72-2.44 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.29v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.27 14.28A7.2 7.2 0 0 1 4.89 12c0-.79.14-1.56.38-2.28v-3.1H1.29a12 12 0 0 0 0 10.76l3.98-3.1z"/><path fill="#EA4335" d="M12 4.77c1.76 0 3.34.6 4.58 1.8l3.44-3.44A11.98 11.98 0 0 0 12 0 12 12 0 0 0 1.29 6.62l3.98 3.1C6.22 6.88 8.87 4.77 12 4.77z"/></svg>'}
+function vAuth(app,mode,query){const isLogin=mode==="login";const nextPath=query.next||"/";const gHref="/api/auth/google?next="+encodeURIComponent("/index.html#"+nextPath);
+document.title=(isLogin?"Sign In":"Create Account")+" — DEEZRAA SCP";
+app.innerHTML='<div class="authpage"><div class="authbg"><img src="/img/hero-bg.jpg" alt=""/><div class="sh"></div><div class="orb" style="top:50%;left:50%;transform:translate(-50%,-50%);width:70vw;height:50vh;background:radial-gradient(closest-side,rgba(229,9,20,.3),transparent)"></div></div>'
++'<div style="position:relative;z-index:2;width:100%;max-width:28rem"><div class="authlogo"><img src="/img/deezraa-logo.svg" alt="DEEZRAA official brand logo"/><b>DEEZRAA <em>SCP</em></b></div>'
++'<div class="authcard glass-deep"><p class="label-caps" style="font-size:10px;color:var(--crimson)">'+(isLogin?"Welcome back":"Join the studio")+'</p>'
++'<h1 class="font-d" style="margin-top:12px;font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.02">'+(isLogin?'Step back into <span class="grad-red">the frame.</span>':'Claim your <span class="grad-red">director\'s seat.</span>')+'</h1>'
++'<a href="'+gHref+'" class="btn btn-glass gbtn" style="margin-top:28px">'+gSVG()+'Continue with Google</a>'
++'<div class="divider"><span class="label-caps" style="font-size:9px;color:var(--t3)">or continue with email</span></div>'
++'<form id="authForm" style="display:grid;gap:16px">'
++(isLogin?'<div><label class="field-label label-caps" style="font-size:9px">Email or username</label><input class="inp" id="aId" autocomplete="username" placeholder="you@studio.com" required/></div>'
+:'<div><label class="field-label label-caps" style="font-size:9px">Username</label><input class="inp" id="aUser" minlength="3" maxlength="20" autocomplete="username" placeholder="deezraa_edits" required/></div><div><label class="field-label label-caps" style="font-size:9px">Email</label><input class="inp" id="aEmail" type="email" autocomplete="email" placeholder="you@studio.com" required/></div>')
++'<div><label class="field-label label-caps" style="font-size:9px">'+(isLogin?"Password":"Password — min. 8 characters")+'</label><input class="inp" id="aPass" type="password" minlength="8" autocomplete="'+(isLogin?"current-password":"new-password")+'" placeholder="••••••••" required/></div>'
++'<div id="aErr"></div><button class="btn btn-primary" id="aBtn" style="height:50px;width:100%;font-size:11px">'+(isLogin?"Sign in →":"Create account →")+'</button></form>'
++'<p style="margin-top:26px;border-top:1px solid rgba(255,255,255,.08);padding-top:20px;text-align:center;font-size:13px;color:var(--t3)">'+(isLogin?"New to DEEZRAA? ":"Already have an account? ")+'<a href="#/'+(isLogin?"register":"login")+(nextPath!=="/"?("?next="+encodeURIComponent(nextPath)):"")+'" style="color:#fff;font-weight:500">'+(isLogin?"Create an account":"Sign in instead")+'</a></p>'
++'</div></div></div>';
+document.getElementById("authForm").onsubmit=async e=>{e.preventDefault();const btn=document.getElementById("aBtn");btn.disabled=true;btn.innerHTML='<span class="spin"></span> Please wait…';
+try{if(isLogin){await jsend("/api/auth/login","POST",{identifier:document.getElementById("aId").value,password:document.getElementById("aPass").value})}
+else{await jsend("/api/auth/register","POST",{username:document.getElementById("aUser").value,email:document.getElementById("aEmail").value,password:document.getElementById("aPass").value})}
+await refreshMe();location.hash="#"+nextPath;toast(isLogin?"Welcome back":"Account created — welcome")}catch(err){document.getElementById("aErr").innerHTML='<p class="errbox">'+esc(err.message)+'</p>';btn.disabled=false;btn.textContent=isLogin?"Sign in →":"Create account →"}}}
+/* ============ init ============ */
+(async function init(){document.querySelector(".footbase p").innerHTML="Copyright © 2026 DEEZRAA SCP. All Rights Reserved.";await refreshMe();if(!location.hash)history.replaceState(null,"","#/");router()})();
+</script>
+</body>
+</html>

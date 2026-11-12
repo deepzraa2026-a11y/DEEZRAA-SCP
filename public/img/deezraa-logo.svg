@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <radialGradient id="dzbg" cx="50%" cy="34%" r="92%">
+      <stop offset="0%" stop-color="#ffa9d1"/>
+      <stop offset="36%" stop-color="#f6509b"/>
+      <stop offset="70%" stop-color="#96144e"/>
+      <stop offset="100%" stop-color="#38071c"/>
+    </radialGradient>
+    <radialGradient id="dzvin" cx="50%" cy="50%" r="72%">
+      <stop offset="56%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1c020c" stop-opacity="0.62"/>
+    </radialGradient>
+    <pattern id="dzdots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4.6" fill="#ffffff" opacity="0.22"/>
+    </pattern>
+    <pattern id="dzdots2" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="translate(12,12)">
+      <circle cx="6" cy="6" r="3" fill="#4d0a26" opacity="0.3"/>
+    </pattern>
+    <filter id="dzglow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="11" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="800" fill="url(#dzbg)"/>
+  <rect width="800" height="800" fill="url(#dzdots)"/>
+  <rect width="800" height="800" fill="url(#dzdots2)"/>
+  <g opacity="0.55">
+    <rect x="-120" y="150" width="1040" height="92" fill="#ffffff" opacity="0.14" transform="rotate(-18 400 400)"/>
+    <rect x="-120" y="304" width="1040" height="32" fill="#ffffff" opacity="0.12" transform="rotate(-18 400 400)"/>
+  </g>
+  <g transform="rotate(-16 400 400)">
+    <rect x="128" y="286" width="250" height="168" rx="28" fill="#0c0207" opacity="0.9"/>
+    <text x="253" y="397" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" letter-spacing="6" fill="#f471b5" opacity="0.55">SCP</text>
+  </g>
+  <rect width="800" height="800" fill="url(#dzvin)"/>
+  <g fill="#ffe4ef" opacity="0.92">
+    <path d="M148 166l4.5 11 11 4.5-11 4.5-4.5 11-4.5-11-11-4.5 11-4.5z"/>
+    <path d="M648 138l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z"/>
+    <path d="M618 628l4 9.5 9.5 4-9.5 4-4 9.5-4-9.5-9.5-4 9.5-4z"/>
+    <path d="M180 610l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z"/>
+    <circle cx="252" cy="596" r="3"/>
+    <circle cx="560" cy="212" r="2.6"/>
+  </g>
+  <text x="400" y="436" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="118" letter-spacing="12" fill="#fff0f6" filter="url(#dzglow)">DEEZRAA</text>
+  <text x="406" y="492" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="20" fill="#ffd3e5" opacity="0.92">SCP</text>
+</svg>
